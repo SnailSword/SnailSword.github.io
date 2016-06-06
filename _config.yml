@@ -6,7 +6,7 @@ email: saniachere@outlook.com
 description: ""
 keyword: ""
 url: "http://103.233.185.120/saniac/resume/"              # your host, for absolute URL
-baseurl: "/blog"         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/SnailSword.github.io"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
