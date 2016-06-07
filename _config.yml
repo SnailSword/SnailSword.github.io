@@ -12,11 +12,11 @@ baseurl: "/SnailSword.github.io"         # for example, '/blog' if your blog hos
 
 # SNS settings
 RSS: false
-weibo_username:     三毛看地漏
-zhihu_username:     焦天寒
+weibo_username:     heartjoker
+zhihu_username:     saniac
 github_username:    SnailSword
-#twitter_username:  huxpro
-facebook_username:  huxpro
+twitter_username:  Heart_Joker_
+
 
 
 
@@ -45,30 +45,9 @@ kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
 
-
-# Disqus settings
-#disqus_username: _your_disqus_short_name_
-
-# Duoshuo settings
-duoshuo_username: 焦天寒
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
-
-# Analytics settings
-# Baidu Analytics
-ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
-# Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
-
-
-
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
+sidebar-about-description: "好想把这叫技术博客"
 sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -78,6 +57,10 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
+# Duoshuo settings
+duoshuo_username: 6293144564509181000
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: false
 
 # Friends
 friends: [
