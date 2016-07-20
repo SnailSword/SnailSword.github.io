@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+/*css 重置样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{ margin:0; padding:0}
+h1,h2,h3,h4,h5,h6 { font-weight:normal}
+ol,ul {list-style:none;} 
+li { list-style:none}
+a { text-decoration:none; display:block; color:#FFF}
+img { border:none; display:block}
+.clearFix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearFix{zoom:1}
+
+/*body{*/
+    /*width: 100%;*/
+    /*max-width: 1200px;*/
+    /*min-width: 400px;*/
+    /*position: absolute;*/
+    /*margin: 0 auto;*/
+/*}*/
+.zf-quest-container{
+    width: 94%;
+    padding: 3%;
+    /*background: #fff;*/
+    overflow: hidden;
+    /*max-width: 1200px;*/
+    min-width: 500px;
+    font-family: "Microsoft YaHei", SimSun, sans-serif;
+}
+.zf-quest-topcon{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+.zf-quest-topcon h1.title{
+    text-align: center;
+    font-size: 24px;
+    color: #4c4c4c;
+    line-height: 42px;
+}
+.zf-quest-topcon{
+    text-align: left;
+    font-size: 14px;
+    color: #4c4c4c;
+}
+/*.zf-quest-topcon .ques-des{*/
+    /*color: #4c4c4c;*/
+    /*font-size: 14px;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.zf-quest-topcon .ques-des p{*/
+    /*float: left;*/
+    /*line-height: 21px;*/
+/*}*/
+/*.zf-quest-topcon .ques-des p span{*/
+    /*padding: 0px 3px;*/
+/*}*/
+/*.zf-quest-topcon .ques-des a.preview{*/
+    /*display: block;*/
+    /*float: right;*/
+    /*width: 48px;*/
+    /*height: 21px;*/
+    /*line-height: 21px;*/
+    /*background: #fff;*/
+    /*color: #0099ff;*/
+    /*font-size: 12px;*/
+    /*border: 1px solid #0099ff;*/
+    /*text-align: center;*/
+/*}*/
+.zf-quest-topcon p.topcon{
+    margin-top: 12px;
+    color: #4c4c4c;
+    font-size: 14px;
+    line-height: 23px;
+}
+/*.zf-quest-topcon p.topsm{*/
+    /*margin:20px 0px;*/
+    /*color: #4c4c4c;*/
+    /*font-size: 14px;*/
+    /*color: #0066ff;*/
+    /*line-height: 23px;*/
+/*}*/
+
+.zf-quest-maincon{
+    overflow: hidden;
+    margin-top: 20px;
+}
+.zf-quest-list{
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.zf-quest-list h5.question{
+    line-height: 28px;
+    color: #4c4c4c;
+    font-size: 16px;
+    font-weight: normal;
+}
+.zf-quest-list > p{
+    display: block;
+    float: left;
+    margin-right: 25px;
+    line-height: 28px;
+    overflow: hidden;
+    /*white-space: nowrap;*/
+}
+.zf-back-btn{
+    background: #0099ff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    width: 120px;
+    height: 34px;
+    line-height: 32px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: none;
+    border-radius: 5px;
+}
+.zf-date{
+    text-align: center;
+}
+
