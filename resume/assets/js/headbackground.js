@@ -3,6 +3,18 @@
  */
 $(document).ready(function () {
     init();
+    var container = $('html');
+    var scrollTo = $('#resume');
+    setTimeout(function () {
+        $('body').animate({
+            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+        }, 1100);
+    },3000);
+    setTimeout(function () {
+        $('body').animate({
+            scrollTop: container.scrollTop()
+        }, 700);
+    },4000);
 });
 
 var canvas,

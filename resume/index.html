@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <!--<link rel="shortcut icon" href="assets/ico/favicon.png">-->
 
     <title>Saniac is here</title>
 
@@ -19,6 +19,7 @@
     
     <link href='assets/css/cssf1.css' rel='stylesheet' type='text/css'>
     <link href='assets/css/cssf2.css' rel='stylesheet' type='text/css'>
+	  <link href='assets/css/fullpage-menu.css' rel='stylesheet' type='text/css'>
     
     <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
@@ -311,7 +312,8 @@
 										color : "#ecf0f1"
 									}
 								];
-								var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+							var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d"));
+							myDoughnut.Doughnut(doughnutData);
 						</script>
 					</div>
 					<div class="col-lg-3 centered">
@@ -416,7 +418,7 @@
 		<br>
 		<br>
 	</div><!--/.container -->
-	
+
 
 
 	<section id="contact" name="contact"></section>
@@ -466,6 +468,63 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
+
+	<div class="page-container">
+		<div class="custom-navbar"><a  class="fm-button" href="#">talk is cheap,show me the code.</a></div>
+		<div class="sidemenu">
+			<ul class="fm-first-level">
+				<li><a href="#menu1">Work List</a></li>
+				<li><a href="#menu2">Blog List</a></li>
+			</ul>
+			<nav id="menu1" class="active">
+				<a target="_blank" href="http://snailsword.github.io/resume/">
+					<span class="subtitle">I'm the work of myself.</span>
+					My resume
+				</a>
+				<a target="_blank" href="http://103.233.185.120/saniac/cut9">
+					<span class="subtitle">You can answer the cloze test here and get your score and analysis of each cloze.</span>
+					cloze test system
+				</a>
+				<a target="_blank" href="http://103.233.185.120/saniac/hxfhgjd/">
+					<span class="subtitle">You can draw on a canvas or on a pixel grid here.</span>
+					The Squiggle Game
+				</a>
+				<a target="_blank" href="http://snailsword.github.io/demo/questionnaire-result/">
+					<span class="subtitle">A self adaption bar chart</span>
+					bar chart
+				</a>
+				<a target="_blank" href="http://103.233.185.120/saniac/pm25/">
+					<span class="subtitle">a PM25 Monitoring system based on BaiduMap API</span>
+					PM25 Monitoring system
+				</a>
+			</nav>
+			<nav id="menu2">
+				<a target="_blank" href="https://www.zhihu.com/question/36188340/answer/103368544">
+					<span class="subtitle">How to bind event with for loop</span>
+					An answer about javascript closure
+				</a>
+			</nav>
+		</div>
+	</div>
+
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.fullpage-menu.js"></script>
+	<script>
+		$(document).ready( function() {
+			$(".sidemenu").fullpageMenu();
+
+			$("#click-me").click(function() {
+				$(".sidemenu").openMenu();
+				return false;
+			});
+		});
+
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+		});
+
+	</script>
   </body>
 </html>
