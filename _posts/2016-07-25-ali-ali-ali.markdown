@@ -115,3 +115,7 @@ c.Hello undefined
 
 d.Hello World
 
+运行到那个IIFE的if时，name的值是undefined，不信你看:
+
+![chrome调试截图](../img/in-post/post-js-version/01.JPG)
+
