@@ -117,5 +117,8 @@ d.Hello World
 
 运行到那个IIFE的if时，name的值是undefined，不信你看:
 
-![chrome调试截图](../img/in-post/post-js-version/01.JPG)
+![chrome调试截图](img/in-post/post-js-version/01.JPG 'chrome调试截图')
+
+这是因为IIFE中的 `var name` 声明提升，到if前面了，相当于在if前面 `var name = undefined`。
+
 
