@@ -132,6 +132,8 @@ c.假设parentEle是childEle的父节点，绑定事件：parentEle.addEventList
 
 d.addEventListener第三个参数true代表支持捕获，false代表不支持捕获
 
+本题讲解部分引用均摘自阮一峰大大的 [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/)。
+
 >当一个事件发生以后，它会在不同的DOM节点之间传播（propagation）。这种传播分成三个阶段：
 >
 > 
@@ -141,3 +143,89 @@ d.addEventListener第三个参数true代表支持捕获，false代表不支持�
 >
 > 3.从目标节点传导回window对象，称为“冒泡阶段”（bubbling phase）。
 
+里面也有讲到关于addEventListener的第三个参数：
+
+> addEventListener方法用于在当前节点或对象上，定义一个特定事件的监听函数。
+> 
+> target.addEventListener(type, listener[, useCapture]);
+> 
+> 上面是使用格式，addEventListener方法接受三个参数。
+> 
+> 
+> * type，事件名称，大小写不敏感。
+> 
+> * listener，监听函数。指定事件发生时，会调用该监听函数。
+> 
+> * useCapture，监听函数是否在捕获阶段（capture）触发。该参数是一个布尔值，默认为false（表示监听函数只在冒泡阶段被**触发**）。老式浏览器规定该参数必写，较新版本的浏览器允许该参数可选。为了保持兼容，建议总是写上该参数。
+
+c选项中，`parentEle.addEventListener("click", fn1, false)`和`childEle.addEventListener("click", fn2,false)`都是绑定在冒泡阶段的事件，所以子元素的事件先于父元素的被触发。
+
+d选项中，第三个参数并不是表示是否支持而是表示绑定于哪个阶段，IE之外的浏览器几乎都支持捕获和冒泡。
+
+插播一个关于事件的三个阶段的小demo：
+
+> 假设div节点之中嵌套一个p节点。
+> 
+>     <div>
+>      <p>Click Me</p>
+>     </div>
+> 
+> 如果对这两个节点的click事件都设定监听函数，则click事件会被触发四次。
+> 
+>     var phases = {
+>       1: 'capture',
+>       2: 'target',
+>       3: 'bubble'
+>     };
+>     
+>     var div = document.querySelector('div');
+>     var p = document.querySelector('p');
+>     
+>     div.addEventListener('click', callback, true);
+>     p.addEventListener('click', callback, true);
+>     div.addEventListener('click', callback, false);
+>     p.addEventListener('click', callback, false);
+>     
+>     function callback(event) {
+>       var tag = event.currentTarget.tagName;
+>       var phase = phases[event.eventPhase];
+>       console.log("Tag: '" + tag + "'. EventPhase: '" + phase + "'");
+>     }
+>     
+>     // 点击以后的结果
+>     // Tag: 'DIV'. EventPhase: 'capture'
+>     // Tag: 'P'. EventPhase: 'target'
+>     // Tag: 'P'. EventPhase: 'target'
+>     // Tag: 'DIV'. EventPhase: 'bubble'
+> 
+> 上面代码表示，click事件被触发了四次：p节点的捕获阶段和冒泡阶段各1次，div节点的捕获阶段和冒泡阶段各1次。
+> 
+>     捕获阶段：事件从div向p传播时，触发div的click事件；
+>     目标阶段：事件从div到达p时，触发p的click事件；
+>     目标阶段：事件离开p时，触发p的click事件；
+>     冒泡阶段：事件从p传回div时，再次触发div的click事件。
+
+###5.预期的输出结果
+
+     var foo = 1;
+     function main(){
+         alert(foo);
+         var foo = 2;
+         alert(this.foo);
+         this.foo = 3;
+      }
+     main(); 
+     new main();
+
+依次弹出 undefined 1 undefined undefined。
+
+执行main()时由于形成一个新的作用域，`var foo = 2` 声明提升到第一个alert前面，造成了alert的时候main作用域中存在 `foo` 变量，就不会沿着作用域链往上找到外层的 `foo`，所以弹出undefined,而执行main()的时候，由于是window调用的，所以*`this.foo` 中的 `this` 指向window* ，所以第二个弹出1.
+
+而执行new main()的时候，new干了四件事(摘自Javascript高级程序设计)：
+
+1. 创建一个新对象；
+2. 将构造函数的作用域赋给新对象（因此this就指向了这个新对象）
+3. 执行构造函数中的代码（为这个新对象添加属性）
+4. 返回新对象
+
+所以在两个alert上他与不加new唯一的不同就是：this的指向不同，前者指向window,后者指向新建的对象。不加new的时候能弹出1是因为我们预先在全局里var了foo为1，而new出的对象中没有foo这个属性，所以两个都弹出undefined.
