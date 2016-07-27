@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: saniachere@outlook.com
 description: ""
 keyword: ""
-url: "http://103.233.185.120/saniac/resume/"              # your host, for absolute URL
+url: "http://SnailSword.github.io/resume/"              # your host, for absolute URL
 baseurl: "/SnailSword.github.io"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -33,6 +33,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
+port: 4005
 
 
 

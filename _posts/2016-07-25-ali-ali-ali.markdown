@@ -13,7 +13,7 @@ tags:
 
 题目及部分思路来自[这里](https://segmentfault.com/a/1190000002638818)，[这里](http://hao.jser.com/archive/5225/),以及[这里](https://github.com/topview-frontend/campus-recruitment/blob/master/written/frontend_online_examination.md)。
 
-###1.选择符合预期的运行结果
+### 1.选择符合预期的运行结果 ###
 
 Javascript:
 	
@@ -60,7 +60,7 @@ waitForMs函数要一直卡在那个循环等500ms。本来f1和f2要分别在10
 
 的时候，在chrome里调试不知道为什么输出每次都比前一次多2ms,而且只运行这段代码之后再运行上面的全部代码就会没有输出，不知道是什么原因导致的。
 
-###2.选择结果为真的表达式
+### 2.选择结果为真的表达式 ###
 
 a.null instanceof Object
 
@@ -87,13 +87,14 @@ d.false == undefined
 
 
 前两天看了一篇文章专门说'=='的文章:[通过一张简单的图，让你彻底地、永久地搞懂JS的==运算](https://segmentfault.com/a/1190000006012804?utm_source=tuicool&utm_medium=referral),他是这么解释null==undefined的:
+
 >JavaScript中的undefined和null是另一个经常让我们崩溃的地方。通常它被认为是一个设计缺陷，这一点我们不去深究。不过我曾听说，JavaScript的作者最初是这样想的：
-
+>
 >>假如你打算把一个变量赋予对象类型的值，但是现在还没有赋值，那么你可以用null表示此时的状态(证据之一就是typeof null 的结果是'object')；相反，假如你打算把一个变量赋予原始类型的值，但是现在还没有赋值，那么你可以用undefined表示此时的状态。
-
+>
 >不管这个传闻是否可信，它们两者做==比较的结果是true是很合理的。
 
-###3.选择符合预期的执行结果
+### 3.选择符合预期的执行结果 ###
 
 	var name = 'World!';
 	(function () {
@@ -117,8 +118,26 @@ d.Hello World
 
 运行到那个IIFE的if时，name的值是undefined，不信你看:
 
-![chrome调试截图](img/in-post/post-js-version/01.JPG 'chrome调试截图')
+![chrome调试截图](/SnailSword.github.io/img/in-post/post-js-version/01.JPG 'chrome调试截图')
 
 这是因为IIFE中的 `var name` 声明提升，到if前面了，相当于在if前面 `var name = undefined`。
 
+### 4.选择描述正确的选项
+
+a.事件流包括两个阶段：事件捕获阶段、事件冒泡阶段
+
+b.IE跟标准浏览器对于DOM事件流实现不一样
+
+c.假设parentEle是childEle的父节点，绑定事件：parentEle.addEventListener("click", fn1, false)和childEle.addEventListener("click", fn2,false),当点击childEle的时候fn1将先于fn2触发
+
+d.addEventListener第三个参数true代表支持捕获，false代表不支持捕获
+
+>当一个事件发生以后，它会在不同的DOM节点之间传播（propagation）。这种传播分成三个阶段：
+>
+> 
+> 1.从window对象传导到目标节点，称为“捕获阶段”（capture phase）。
+>
+> 2.在目标节点上触发，称为“目标阶段”（target phase）。
+>
+> 3.从目标节点传导回window对象，称为“冒泡阶段”（bubbling phase）。
 
