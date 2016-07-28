@@ -3,18 +3,18 @@
  */
 $(document).ready(function () {
     init();
-    var container = $('html');
-    var scrollTo = $('#resume');
-    setTimeout(function () {
-        $('body').animate({
-            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-        }, 1100);
-    },3000);
-    setTimeout(function () {
-        $('body').animate({
-            scrollTop: container.scrollTop()
-        }, 700);
-    },4000);
+    // var container = $('body');
+    // var scrollTo = $('#resume');
+    // setTimeout(function () {
+    //     $('html,body').animate({
+    //         scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+    //     }, 1100);
+    // },3000);
+    // setTimeout(function () {
+    //     $('html,body').animate({
+    //         scrollTop: container.scrollTop()
+    //     }, 700);
+    // },4000);
 });
 
 var canvas,
@@ -29,7 +29,7 @@ function line() {
     this.path = [];
     this.speed = rand( 10, 20 );
     this.count = randInt( 10, 30 );
-    this.x = width / 2, + 1;
+    this.x = width / 2 + 1;
     this.y = height / 2 + 1;
     this.target = { x: width / 2, y: height / 2 };
     this.dist = 0;
