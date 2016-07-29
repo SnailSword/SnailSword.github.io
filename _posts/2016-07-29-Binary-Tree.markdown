@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Leetcode二叉树相关题目-JS"
-subtitle:   "扶朕起来，朕还能写一个通宵。"
+subtitle:   "二叉树上二叉果，二叉树下你和我。"
 date:       2016-07-29 17:11:00
 author:     "Saniac"
 header-img: "img/post-bg-js-version.jpg"
@@ -11,7 +11,7 @@ tags:
     - 在路上
 ---
 
-### #102 Binary Tree Level Order Traversal
+### 102 Binary Tree Level Order Traversal
 
 > Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 > 
@@ -99,5 +99,46 @@ var levelOrder = function(root) {
     }
     return res;}
     return [];
+};
+```
+
+### 226 二叉树反转大法
+
+    Invert a binary tree.
+    
+         4
+       /   \
+      2     7
+     / \   / \
+    1   3 6   9
+
+    to
+         4
+       /   \
+      7     2
+     / \   / \
+    9   6 3   1
+
+我的思路是用递归交换每一个树的左右节点：
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    if(root){
+        [root.left,root.right]=[root.right,root.left];
+        invertTree(root.right);
+        invertTree(root.left);
+    }
+    return root;
 };
 ```

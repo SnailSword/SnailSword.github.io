@@ -57,5 +57,39 @@ var reverseVowels = function(s) {
     return toArr.join('');
 };
 ```
+### 打点计时器
 
+> 实现一个打点计时器，要求
+> 1、从 start 到 end（包含 start 和 end），每隔 100 毫秒 console.log 一个数字，每次数字增幅为 1
+> 2、返回的对象中需要包含一个 cancel 方法，用于停止定时操作
+> 3、第一个数需要立即输出
 
+```javascript
+function count(start, end) {
+    var i = start;
+    console.log(i++);
+    function foo(){
+        if(i<=end){
+            console.log(i++);
+            id = setTimeout(foo,100);
+        }
+        else{
+         clearTimeout(id);   
+        }
+    }
+	id = setTimeout(foo,100);
+    return {
+        cancel: function(){
+            clearInterval(id);
+       }
+    }
+}
+```
+
+[javascript秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/#other.timeouts)里面建议避免使用setInterval，需要时用回调函数加了setTimeout的setTimeout函数代替。因为:
+> 当回调函数的执行被阻塞时，setInterval 仍然会发布更多的回调指令。在很小的定时间隔情况下，这会导致回调函数被堆积起来。
+
+使用计时器还有一点需要注意的就是
+> 作为第一个参数的函数将会在全局作用域中执行，因此函数内的 this 将会指向这个全局对象。
+
+所以如果id前面加var定义成局部变量会导致`clearInterval(id)`无法清除定时器。
