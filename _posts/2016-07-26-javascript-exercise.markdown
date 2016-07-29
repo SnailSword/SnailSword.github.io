@@ -32,27 +32,30 @@ tags:
 
 参考代码：
 
-	var reverseVowels = function(s) {
-	    var vowels = ['a','e','i','o','u'];
-	    vowels = vowels.concat(vowels.map(function(a){
-	        return a.toUpperCase();
-	    }));
-	    var toArr = s.split('');
-	    var len = toArr.length;
-	    var index1 = 0,index2 = len - 1;
-	    while(index1<index2){
-	    while((vowels.indexOf(toArr[index1])==-1)&&index1<len){
-	        index1++;
-	    }
-	    while((vowels.indexOf(toArr[index2])==-1)&&index2>-1){
-	        index2--;
-	    }
-	    if(index1>=index2){break;}
-	    [toArr[index1],toArr[index2]] = [toArr[index2],toArr[index1]];
-	    index1++;
-	    index2--;
-	    }
-	    return toArr.join('');
-	};
+
+```javascript
+var reverseVowels = function(s) {
+    var vowels = ['a','e','i','o','u'];
+    vowels = vowels.concat(vowels.map(function(a){
+        return a.toUpperCase();
+    }));
+    var toArr = s.split('');
+    var len = toArr.length;
+    var index1 = 0,index2 = len - 1;
+    while(index1<index2){
+    while((vowels.indexOf(toArr[index1])==-1)&&index1<len){
+        index1++;
+    }
+    while((vowels.indexOf(toArr[index2])==-1)&&index2>-1){
+        index2--;
+    }
+    if(index1>=index2){break;}
+    [toArr[index1],toArr[index2]] = [toArr[index2],toArr[index1]];
+    index1++;
+    index2--;
+    }
+    return toArr.join('');
+};
+```
 
 

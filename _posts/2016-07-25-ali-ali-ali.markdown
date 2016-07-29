@@ -15,25 +15,25 @@ tags:
 
 ### 1.选择符合预期的运行结果 ###
 
-Javascript:
-	
-	function f1() {
-    console.time('time span');
-	}
+```javascript	
+function f1() {
+console.time('time span');
+}
 
-	function f2() {
-    console.timeEnd('time span');
-	}
+function f2() {
+console.timeEnd('time span');
+}
 
-	setTimeout(f1, 100);
-	setTimeout(f2, 200);
+setTimeout(f1, 100);
+setTimeout(f2, 200);
 
-	function waitForMs(n) {
-    	var now = Date.now();
-	    while (Date.now() - now < n) {}
-	}
+function waitForMs(n) {
+	var now = Date.now();
+    while (Date.now() - now < n) {}
+}
 
-	waitForMs(500);
+waitForMs(500);
+```
 
 a.time span:700.077ms
 
@@ -47,16 +47,18 @@ waitForMs函数要一直卡在那个循环等500ms。本来f1和f2要分别在10
 
 这里还有一个疑问，就是当我运行
 	
-	function f1() {
-    console.time('time span');
-	}
+```javascript
+function f1() {
+console.time('time span');
+}
 
-	function f2() {
-    console.timeEnd('time span');
-	}
+function f2() {
+console.timeEnd('time span');
+}
 
-	setTimeout(f1, 100);
-	setTimeout(f2, 200);
+setTimeout(f1, 100);
+setTimeout(f2, 200);
+```
 
 的时候，在chrome里调试不知道为什么输出每次都比前一次多2ms,而且只运行这段代码之后再运行上面的全部代码就会没有输出，不知道是什么原因导致的。
 
@@ -72,19 +74,20 @@ d.false == undefined
 
 写一个小玩意看看js里这些蛋疼的'=='相关：
 
-	var Arr = [null,undefined,0,'0','',NaN,true,false];
-	var len = Arr.length;
-	for (var i in Arr){
-	    for(var j in Arr){
-	        if(Arr[i]==Arr[j]){
-	            console.log(Arr[i] + '==' + Arr[j]);
-	        }
-	        else{
-	            console.log(Arr[i] + '!=' + Arr[j]);
-	        }
-	    }
-	}
-
+```javascript
+var Arr = [null,undefined,0,'0','',NaN,true,false];
+var len = Arr.length;
+for (var i in Arr){
+    for(var j in Arr){
+        if(Arr[i]==Arr[j]){
+            console.log(Arr[i] + '==' + Arr[j]);
+        }
+        else{
+            console.log(Arr[i] + '!=' + Arr[j]);
+        }
+    }
+}
+```
 
 前两天看了一篇文章专门说'=='的文章:[通过一张简单的图，让你彻底地、永久地搞懂JS的==运算](https://segmentfault.com/a/1190000006012804?utm_source=tuicool&utm_medium=referral),他是这么解释null==undefined的:
 
@@ -96,16 +99,17 @@ d.false == undefined
 
 ### 3.选择符合预期的执行结果 ###
 
-	var name = 'World!';
-	(function () {
-	  if (typeof name === 'undefined') {
-	    var name = 'Jack';
-	    console.log('Goodbye ' + name);
-	  } else {
-	    console.log('Hello ' + name);
-	  }
-	})();
-
+```javascript
+var name = 'World!';
+(function () {
+  if (typeof name === 'undefined') {
+    var name = 'Jack';
+    console.log('Goodbye ' + name);
+  } else {
+    console.log('Hello ' + name);
+  }
+})();
+```
 
 
 a.Goodbye Jack
@@ -207,6 +211,7 @@ d选项中，第三个参数并不是表示是否支持而是表示绑定于哪�
 
 ###5.预期的输出结果
 
+```javascript
      var foo = 1;
      function main(){
          alert(foo);
@@ -216,6 +221,7 @@ d选项中，第三个参数并不是表示是否支持而是表示绑定于哪�
       }
      main(); 
      new main();
+```
 
 依次弹出 undefined 1 undefined undefined。
 
