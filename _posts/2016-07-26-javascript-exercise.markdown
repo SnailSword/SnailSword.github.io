@@ -93,3 +93,22 @@ function count(start, end) {
 > 作为第一个参数的函数将会在全局作用域中执行，因此函数内的 this 将会指向这个全局对象。
 
 所以如果id前面加var定义成局部变量会导致`clearInterval(id)`无法清除定时器。
+
+### 342.判断是否为4的倍数
+
+```javascript
+/**
+ * @param {number} num
+ * @return {boolean}
+ */
+var isPowerOfFour = function(num) {
+    a = num.toString(2);
+    var reg = /1(00)*/;
+    if(reg.test(a))
+    return  a.match(reg)[0]===a;
+    else 
+    {return false;}
+};
+```
+
+转为2进制，判断是否为一个1，2n个0格式的。
