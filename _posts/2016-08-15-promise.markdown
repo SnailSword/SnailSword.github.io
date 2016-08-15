@@ -4,9 +4,11 @@ title:      "Promise 临阵磨枪"
 subtitle:   "I promise."
 date:       2016-08-15 23:47:00
 author:     "Saniac"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "img/post-bg-promise.jpg"
 catalog: true
 tags:
     - ES6
 ---
+
+文中部分代码及文字摘自[Promise迷你书](http://liubin.org/promises-book)
 
