@@ -1,0 +1,12 @@
+---
+layout:     post
+title:      "Promise 临阵磨枪"
+subtitle:   "I promise."
+date:       2016-08-15 23:47:00
+author:     "Saniac"
+header-img: "img/post-bg-js-version.jpg"
+catalog: true
+tags:
+    - ES6
+---
+
