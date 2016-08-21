@@ -12,3 +12,218 @@ tags:
 
 文中部分代码及文字摘自[Promise迷你书](http://liubin.org/promises-book)
 
+### 一步步来
+
+```
+var promise = new Promise(function(resolve,reject){
+    //处理状态结束后，调用resolve或reject
+});
+```
+Promise实例方法：
+
+```promise.then(onFulfilled,onRejected)```
+
+resolve时调用onFilfilled,reject时调用OnRejected.
+
+如果只想指定异常时的处理，可以用then()只指定onRejected,也可以用
+
+```promise.catch(onReject)```
+
+### 静态方法
+
+```javascript
+Promise.all();
+Promise.resolve();
+```
+###一个栗子
+
+```javascript
+function asyncFunction() {
+    return new Promise(function(resolve,reject) {
+        setTimeout(function () {
+            resolve('second');
+            console.log('first');
+        },1000);
+    });
+}
+
+asyncFunction().then(function (value) {
+    console.log(value);
+},function (error) {
+    console.log(error);
+});
+```
+本例中，'first'会在'second'之前输出。
+
+如果使用catch方法，上例可写做：
+
+```javascript
+asyncFunction().then(function (value) {
+    console.log(value);
+}).catch(function (error) {
+    console.log(error);
+})
+```
+一个容易产生误解的地方，就是 _并不是发生程序错误等报错情况会执行catch_ ，而是在实例化Promises
+时，运行到自己指定的reject，则会发生catch中的事件。
+
+比如说，下面是一个利用promise执行ajax请求的栗子，本例中，req.status不为200时产生reject。
+而此时，只是说明http请求没有正常响应，整个程序是没有错误的。
+
+```javascript
+function getURL(URL) {
+    return new Promise(function (resolve, reject) {
+        var req = new XMLHttpRequest();
+        req.open('GET', URL, true);
+        req.onload = function () {
+            if (req.status === 200) {
+                resolve(req.responseText);
+            } else {
+                reject(new Error(req.statusText));
+            }
+        };
+        req.onerror = function () {
+            reject(new Error(req.statusText));
+        };
+        req.send();
+    });
+}
+// 运行示例
+var URL = "http://httpbin.org/get";
+getURL(URL).then(function onFulfilled(value){
+    console.log(value);
+}).catch(function onRejected(error){
+    console.error(error);
+});
+```
+### thenable
+
+就像函数中的argument是拥有.length属性的类数组一样，thenable是拥有.then方法的类promise对象，
+比如$.ajax()
+
+上面提到的静态方法Promise.resolve()就可以把thenable对象转化为 ```真·Promise```.
+
+```javascript
+var promise = Promise.resolve($.ajax({'xxx.xxx'}));
+promise.then(function(value) {
+  console.log(value);
+})
+```
+### 链式调用
+
+```javascript
+function FA() {
+  console.log('A');
+}
+function FB() {
+  console.log('B');
+}
+function error() {
+  console.log('error');
+}
+function FC() {
+  console.log('C');
+}
+//调用
+var promise = Promise.resolve();
+promise.then(FA).then(FB).catch(error).then(FC);
+
+```
+
+> 插播一道关于promise链式调用的笔试题:
+> 
+> Please give a function which takes an array of asynchronous and run the functions in the array, each one running once the previous function has completed.
+> 
+> ```javascript
+> function asyncOneByOne(arr) {  
+>      //your code here 
+> } 
+> function one(callback) {  
+>     setTimeout(function(){
+>         console.log('first');
+>         callback();  }, 200); } 
+> function two(callback) {  
+>     setTimeout(function(){      
+>         console.log('second');      
+>         callback();  }, 0); } 
+>         asyncOneByOne([one, two]) 
+>         // will print 
+>         // > first 
+>         // > second 
+> ```
+
+那时候我太naive,用了很土鳖的直接一层套一层的回调函数方法：
+
+```javascript
+ function asyncOneByOne(arr) {
+                var foo = function(){}
+                if(arr.length===1){arr[0](foo)}
+                else {
+                    var lt = arr[arr.length-2];
+                    var lo = arr[arr.length-1];
+                    var arr2=arr.slice(0,-1);
+                    arr2[arr2.length-1] = function(foo){
+                    lt(function(){lo(foo)});
+                    }
+                    asyncOneByOne(arr2);
+                }
+            }
+            function one(callback) {
+                setTimeout(function(){
+                    console.log('first');
+                    callback();
+                }, 200); }
+            function two(callback) {
+                setTimeout(function(){console.log('second');
+                    callback();}, 0); }
+            function three(callback) {
+                setTimeout(function(){console.log('third');
+                    callback();}, 100); }
+            asyncOneByOne([one, two ,three , one]);
+            //first
+            //second
+            //third
+            //first
+            
+ ```
+
+然后就没有然后了，现在有了promise,腰不疼了，腿不酸了，一口气上六楼。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
