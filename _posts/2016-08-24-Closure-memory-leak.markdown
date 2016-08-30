@@ -11,6 +11,19 @@ tags:
     - js
 ---
 
+### 内存泄漏的例子
+
+```javascript
+window.onload = function(){
+    var el = document.getElementById("id");
+    el.onclick = function(){
+        alert(el.id);
+    }
+}
+```
+el的onclick属性中的匿名函数对象有对el的引用，这样就导致了循环引用。
+
+由于js的垃圾回收机制，这种循环引用不会被回收。
 
 
 
