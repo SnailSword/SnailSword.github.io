@@ -1,0 +1,37 @@
+---
+layout:     post
+title:      "一个厉害的判断IE版本方法"
+subtitle:   "……"
+date:       2016-08-31 23:52:00
+author:     "Saniac"
+header-img: "img/post-bg-promise.jpg"
+catalog: true
+tags:
+    - IE
+---
+
+```javascript
+var isIE = function(ver){
+    var b = document.createElement('b')
+    b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+    return b.getElementsByTagName('i').length === 1
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
