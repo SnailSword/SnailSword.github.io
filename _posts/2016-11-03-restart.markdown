@@ -11,3 +11,41 @@ tags:
 ---
 
 每天过20个单词，1道leetcode，写一小段代码（有趣的）（需求中的或者自己写着玩的 如canvas动画 小游戏）
+
+leetcode #199
+> Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var rightSideView = function(root) {
+    let stack = [root];
+    let cur = root;
+    let last = root;
+    let result = [];
+    while(stack.length&&root){
+        cur = stack.pop();
+        if(cur.left){
+            stack.unshift(cur.left);
+        }
+        if(cur.right){
+            stack.unshift(cur.right);
+        }
+        if(cur === last){
+            result.push(cur.val);
+            last = stack[0];
+        }
+    }
+    return result;
+};
+```
