@@ -49,3 +49,5 @@ var rightSideView = function(root) {
     return result;
 };
 ```
+
+跑出来是最慢的里面的最慢的，慢到分布图里显示不到。等我学会了优化这种东西，就要飞起了。
