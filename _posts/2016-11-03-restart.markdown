@@ -1,1 +1,13 @@
+---
+layout:     post
+title:      "每天进步一点点－01"
+subtitle:   "种一棵树最好的时间是十年前，其次是现在。"
+date:       2016-11-03 15:42:00
+author:     "Saniac"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - 一个开始
+---
 
+每天过20个单词，1道leetcode，写一小段代码（有趣的）（需求中的或者自己写着玩的 如canvas动画 小游戏）
