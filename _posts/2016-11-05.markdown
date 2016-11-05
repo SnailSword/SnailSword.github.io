@@ -1,0 +1,55 @@
+---
+layout:     post
+title:      "每天进步一点点－02"
+subtitle:   "踏踏实实做事。"
+date:       2016-11-05 16:14:00
+author:     "Saniac"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - 计划
+---
+
+leetcode #38 count and say
+
+>The count-and-say sequence is the sequence of integers beginning as follows:
+>1, 11, 21, 1211, 111221, ...
+>
+>1 is read off as "one 1" or 11.
+>11 is read off as "two 1s" or 21.
+>21 is read off as "one 2, then one 1" or 1211.
+>Given an integer n, generate the nth sequence.
+
+```javascript
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = n => countAndSay1(n).join('');
+
+var countAndSay1 = function(n) {
+    if(n==1){
+        return [1];
+    }
+    else{
+        var list = countAndSay(n - 1);
+        // var list = a.spilt('');
+        var reslist = [1,list[0]];
+        for(var i=1,j=1;i<list.length;i++){
+            if(list[i]===reslist[2*j-1]){
+                reslist[2*j-2]++;
+            }else{
+                reslist[2*j] = 1;
+                reslist[2*j+1] = list[i];
+                j++;
+            }       
+        }
+        return reslist;
+    }
+};
+```
+
+稍修改一下计划吧。单词改成平实没事儿就刷刷不背单词或者百词斩，能刷多少算多少。
+然后leetcode题还是尽量保证每天一道。
+这3天的计划是把从0开始搭项目做好，克淼哥的问题回答写好，串讲准备一下。
+还有毕设和慎老师 老大交流好，串讲之后开始着手做。
