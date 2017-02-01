@@ -10,29 +10,4 @@ tags:
     - 计划
 ---
 
-leetcode #168 Excel Sheet Column Title
 
->Given a positive integer, return its corresponding column title as appear in an Excel sheet.
-
-```javascript
-/**
- * @param {number} n
- * @return {string}
- */
-var convertToTitle = function(n) {
-    let getChar = i => String.fromCharCode(64+i);
-    let result = '';
-    while(n){
-        let c;
-        if(n%26 == 0){
-            c = 26;
-            n = Math.floor(n/26)-1;
-        }else{
-            c = n%26;
-            n = Math.floor(n/26);
-        }
-        result = getChar(c) + result;
-    }
-    return result;
-};
-```

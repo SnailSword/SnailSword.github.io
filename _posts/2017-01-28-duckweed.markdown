@@ -1,38 +1,37 @@
 ---
 layout:     post
-title:      "每天进步一点点－02"
-subtitle:   "踏踏实实做事。"
-date:       2016-11-05 16:14:00
+title:      "乘风破浪"
+subtitle:   "会有时，直挂云帆济沧海。"
+date:       2017-01-28 21:14:00
 author:     "Saniac"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-duckweed.jpg"
 catalog: true
 tags:
-    - 计划
+    - 乘风破浪
 ---
 
-leetcode #168 Excel Sheet Column Title
+#过年好哇
 
->Given a positive integer, return its corresponding column title as appear in an Excel sheet.
+    今天大年初一，这一年过得有点厉害。
 
-```javascript
-/**
- * @param {number} n
- * @return {string}
- */
-var convertToTitle = function(n) {
-    let getChar = i => String.fromCharCode(64+i);
-    let result = '';
-    while(n){
-        let c;
-        if(n%26 == 0){
-            c = 26;
-            n = Math.floor(n/26)-1;
-        }else{
-            c = n%26;
-            n = Math.floor(n/26);
-        }
-        result = getChar(c) + result;
-    }
-    return result;
-};
-```
+    年初考过了驾照，除去一个心头大患，说出来只有一句话，但却是个很长的故事。
+    那个月爸妈和我挤在南方没有暖气的三十平米小屋里，一直等到腊月二十九，赶回家过了年。
+
+    开学之后那个月又匆匆忙着各种选课，课程认定，马上又忙着掺合自己并没有准备好的春招。
+
+    春招不出意外地颗粒无收，然后跟着一群保研的做了个不太像样的项目，忙忙活活就五月了。
+
+    五月时候就稍微会点啥了，开始到处面试，人生第一次面试去的是实习僧，人生第一个offer是科学出版社的。
+
+    后来，数不清去了多少地方，只记得面了百词斩之后，一下子被打通了静脉，知道了该怎么学。
+
+    再后来，在秋招杀过来之前，幸运地通过了不少笔试面试（当然没通过的也不少），9月14号，入职百度。
+
+    四个月之后，给自己放放假，去了趟日本，吃了很多好吃的。
+
+    然后领媳妇回家过年，今天下午送她回家，晚上回来看了《乘风破浪》。
+
+    谢谢不知道是谁的各路神仙，守护我一步步走得这么顺利。
+    谢谢我看得见摸得着的小天使们：无论我多胡闹，爸妈都陪着我帮我想解决问的办法，我实在不是个好女儿，他们实在是当了好爸妈；
+    臭媳妇跟我摸爬滚打折腾了快两年，互相包容互相依靠，今年居然在我家过年了，想想自己真是人赢；
+    我的基友毛衣毛，没有高山流水，没有啥感人的故事，就是俩慢热的脸盲，靠着一起上体育课的微妙联系，加上想互相装逼的需求，苟延残喘友谊维持到现在，
