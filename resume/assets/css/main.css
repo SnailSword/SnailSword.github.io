@@ -160,6 +160,8 @@ a:after {
 	min-height: 500px;
 	width: 100%;
 	overflow: hidden;
+	background-color: #000000;
+
 
 	-webkit-background-size: 100%;
     -moz-background-size: 100%;
@@ -191,7 +193,6 @@ a:after {
 #headerwrap canvas{
 	display: block;
 	z-index: -100;
-	background-color: #000000;
 }
 
 
