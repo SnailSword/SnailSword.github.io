@@ -66,9 +66,6 @@ duoshuo_share: false
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
         title: "Foo",
         href: "#"
     },{
