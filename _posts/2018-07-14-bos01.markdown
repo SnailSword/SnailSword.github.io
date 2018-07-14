@@ -1,0 +1,18 @@
+---
+layout:     post
+title:      "日出日落 彩虹"
+subtitle:   "《the Book of Shader》学习记录01"
+date:       2018-03-30 19:52:00
+author:     "Saniac"
+header-img: "img/post-bg-js-module.jpg"
+catalog: true
+tags:
+    - the Book of Shader
+    - CG
+---
+
+这两天发现了[The Book Of Shader](https://thebookofshaders.com/) 这篇教程，开启了新世界的大门。把学习的收获记录在这。
+
+
+
+

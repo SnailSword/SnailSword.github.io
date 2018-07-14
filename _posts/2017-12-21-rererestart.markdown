@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "两道leetCode题和一个问题"
+title:      "两道leetcode"
 subtitle:   "不要再拖延啦"
 date:       2017-12-21 15:54:00
 author:     "Saniac"
@@ -12,13 +12,9 @@ tags:
 
 leetcode #168 Excel Sheet Column Title
 
->Given a positive integer, return its corresponding column title as appear in an Excel sheet.
+> Given a positive integer, return its corresponding column title as appear in an Excel sheet.
 
 ```javascript
-/**
- * @param {number} n
- * @return {string}
- */
 var convertToTitle = function(n) {
     let getChar = i => String.fromCharCode(64+i);
     let result = '';
@@ -39,17 +35,13 @@ var convertToTitle = function(n) {
 
 leetcode #179 Largest Number
 
->Given a list of non negative integers, arrange them such that they form the largest number.
+> Given a list of non negative integers, arrange them such that they form the largest number.
 >
->For example, given ```[3, 30, 34, 5, 9]```, the largest formed number is ```9534330```.
+> For example, given ```[3, 30, 34, 5, 9]```, the largest formed number is ```9534330```.
 >
->Note: The result may be very large, so you need to return a string instead of an integer.
+> Note: The result may be very large, so you need to return a string instead of an integer.
 
 ```javascript
-/**
- * @param {number[]} nums
- * @return {string}
- */
 let largestNumber = function(nums) {
     let allZero = true;
     for (i in nums) {
@@ -69,3 +61,4 @@ function sortFunction(a, b) {
     let ba = b + '' + a;
     return ba - ab;
 }
+```
