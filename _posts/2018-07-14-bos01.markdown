@@ -27,8 +27,6 @@ precision mediump float;
 #define PI 3.14159265359
 
 uniform vec2 u_resolution;
-uniform vec2 u_mouse;
-uniform float u_time;
 
 vec3 colorA = vec3(0.149,0.141,0.912);
 vec3 colorB = vec3(1.000,0.833,0.224);
@@ -51,3 +49,81 @@ void main() {
 ```
 <iframe width="50%" height="200" src="https://player.thebookofshaders.com/?log=180714144030" scrolling="no" seamless></iframe>
 虽然画的有点鬼畜，但是道理还是这个道理，主要是学会怎么让自己想要的颜色呆在自己期望的位置上。
+
+![William Turner - The Fighting Temeraire (1838)](https://thebookofshaders.com/06/turner.jpg)
+_William Turner - The Fighting Temeraire (1838)_
+
+## homework 6.2
+
+ > Animate a transition between a sunrise and sunset using u_time.
+
+```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+#define PI 3.14159265359
+
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
+
+vec3 colorA = vec3(0.149,0.141,0.912);
+vec3 colorB = vec3(1.000,0.833,0.224);
+
+float sunSet(float x) {
+    return sin(x + u_time);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color = vec3(0.0);
+
+    vec3 pct = vec3(st.x);
+    pct.b = sunSet(st.x);
+    color = mix(colorB, colorA, smoothstep(1.024,pct.b, st.y));
+
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+注意这里```smoothstep(1.024,pct.b, st.y)```，第一个参数要去比1稍大一点的，不然波峰的地方会有个缝。我理解是因为smoothstep起始值和终止值太接近了就会返回0。
+
+<iframe width="50%" height="200" src="http://player.thebookofshaders.com/?log=180716025957" scrolling="no" seamless></iframe>
+
+## homework 6.2
+
+>  Can you make a rainbow using what we have learned so far?
+
+```glsl
+precision highp float;
+
+#define PI 3.14159265359
+
+uniform vec2 u_resolution;
+
+vec3 colorA = vec3(0.912,0.061,0.017);
+vec3 colorB = vec3(1.000,0.974,0.922);
+
+float sunSet(float x, float b) {
+    return sin(x * PI) / 3.0 + b;
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    vec3 color = vec3(0.0);
+    float p = sunSet(st.x, 0.5);
+    color = mix(colorB, colorA, smoothstep(0.888,p, st.y));
+	color = mix(color, vec3(1.000,0.825,0.272), smoothstep(0.888, p - 0.086, st.y));
+    color = mix(color, vec3(0.001,1.000,0.455), smoothstep(0.752, p - 0.220, st.y));
+        color = mix(color, vec3(0.016,0.658,1.000), smoothstep(0.648, p - 0.428, st.y));
+            color = mix(color, vec3(0.016,0.658,1.000), smoothstep(0.720, p - 0.292, st.y));
+    color = mix(color, vec3(0.517,0.148,1.000), smoothstep(0.696, p - 0.244, st.y));
+    color = mix(color, vec3(0.978,0.990,1.000), smoothstep(0.656, p - 0.356, st.y));
+    gl_FragColor = vec4(color,1.0);
+}
+```
+<iframe width="50%" height="200" src="http://player.thebookofshaders.com/?log=180716033409" scrolling="no" seamless></iframe>
+
+硬叠了个彩虹出来。。。
+
