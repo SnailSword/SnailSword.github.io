@@ -52,6 +52,7 @@ void main() {
 
 ![William Turner - The Fighting Temeraire (1838)](https://thebookofshaders.com/06/turner.jpg)
 _William Turner - The Fighting Temeraire (1838)_
+_图片来自 [thebookofshaders.com](thebookofshaders.com)_
 
 ## homework 6.2
 
@@ -91,7 +92,7 @@ void main() {
 
 <iframe width="50%" height="200" src="http://player.thebookofshaders.com/?log=180716025957" scrolling="no" seamless></iframe>
 
-## homework 6.2
+## homework 6.3
 
 >  Can you make a rainbow using what we have learned so far?
 
@@ -127,3 +128,63 @@ void main() {
 
 硬叠了个彩虹出来。。。
 
+
+## homework 6.4
+
+> Modify the polar example to get a spinning color wheel, just like the waiting mouse icon.
+
+
+> If you look closely at the color wheel used on color pickers (see the image below), they use a different spectrum according to RYB color space. For example, the opposite color of red should be green, but in our example it is cyan. Can you find a way to fix that in order to look exactly like the following image? [Hint: this is a great moment to use shaping functions.]
+
+![ryb色轮](https://thebookofshaders.com/06/colorwheel.png)
+_ryb色轮长这样，图片来自 [thebookofshaders.com](thebookofshaders.com)_
+
+```glsl
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+#define TWO_PI 6.28318530718
+
+uniform vec2 u_resolution;
+uniform float u_time;
+
+//  Function from Iñigo Quiles
+//  https://www.shadertoy.com/view/MsS3Wc
+vec3 hsb2rgb( in vec3 c ){
+    vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
+                             6.0)-3.0)-1.0,
+                     0.0,
+                     1.0 );
+    rgb = rgb*rgb*(3.0-2.0*rgb);
+    return c.z * mix( vec3(1.0), rgb, c.y);
+}
+
+float circle(float r, vec2 st) {
+    return smoothstep(r,r+0.008,distance(vec2(0.5), st));
+}
+
+float adjustment (float f) {
+    return pow(f, 1.416);
+}
+
+void main(){
+    vec2 st = gl_FragCoord.xy/u_resolution;
+    vec3 color = vec3(0.0);
+
+    // Use polar coordinates instead of cartesian
+    vec2 toCenter = vec2(0.5)-st;
+    float angle = (atan(toCenter.y,toCenter.x)/TWO_PI + 0.5);
+    float angleplus = adjustment(angle);
+    float radius = length(toCenter)*2.0;
+
+    color = hsb2rgb(vec3(angleplus,radius,1.0));
+	color = mix(color, vec3(1.0), circle(0.476, st));
+    gl_FragColor = vec4(color,1.0);
+}
+```
+
+这两个放在一起做了，注意前一题中变成色盘时，如果不加```smoothstep```，轮廓会很生硬。
+下面是我改的效果。
+
+<iframe width="200" height="200" src="http://player.thebookofshaders.com/?log=180717043636" scrolling="no" seamless></iframe>
