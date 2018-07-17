@@ -379,6 +379,16 @@ pre code {
   margin-bottom: 0px;
   /* 0 on mobile, modify by Hux */
 }
+.intro-header.about-header {
+  background-position: center 30%;
+}
+.intro-header.about-header .site-heading {
+  color: #fff9;
+  -webkit-text-stroke: 1px #337ab7;
+}
+.intro-header.index-header {
+  background-position: center top;
+}
 @media only screen and (min-width: 768px) {
   .intro-header {
     margin-bottom: 20px;

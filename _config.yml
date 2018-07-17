@@ -1,12 +1,12 @@
 ﻿# Site settings
-title: Saniac lovegood
-SEOTitle: Saniac lovegood| I am here
+title: Saniac Lovegood
+SEOTitle: Saniac Lovegood| I am here
 header-img: img/home-bg.jpg
-email: saniachere@outlook.com
+email: snailsword@gmail.com
 description: ""
 keyword: ""
-url: "http://SnailSword.github.io/resume/"              # your host, for absolute URL
-baseurl: "/SnailSword.github.io"         # for example, '/blog' if your blog hosted on 'host/blog'
+url: "http://SnailSword.github.io/"              # your host, for absolute URL
+baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -48,8 +48,8 @@ kramdown:
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "好想把这叫技术博客"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "有容乃大，无欲则刚"
+sidebar-avatar: /img/avatar-saniac.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

@@ -351,11 +351,26 @@ pre code{
 
 // Header
 
+@bc: #337ab7;
+@bw: 1px;
+
 .intro-header {
 	background: no-repeat center center;
 	background-color: @gray;
 	background-attachment: scroll;
 	.background-cover;
+	&.about-header {
+		background-position: center 30%;
+		.site-heading {
+			color: #fff9;
+			-webkit-text-stroke: 1px @bc;
+			// text-shadow: 0 @bw * 2 @bc, @bw 0 @bc, -1 * @bw 0 @bc, 0 -1 * @bw @bc;
+
+		}
+	}
+	&.index-header {
+		background-position: center top;
+	}
 	// NOTE: Background images are set within the HTML using inline CSS!
 	margin-bottom: 0px;  /* 0 on mobile, modify by Hux */
 	@media only screen and (min-width: 768px) {
