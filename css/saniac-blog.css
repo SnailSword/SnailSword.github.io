@@ -1,8 +1,3 @@
-/*!
- * Saniac Blog v1.0.0 (http://snailsword.github.io/)
- * Copyright 2018 Saniac
- */
-
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -952,4 +947,9 @@ body {
 }
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
+}
+iframe.demo {
+  border: 1px #ccc solid;
+  margin: auto;
+  display: block;
 }

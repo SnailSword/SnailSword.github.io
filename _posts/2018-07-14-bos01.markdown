@@ -47,7 +47,7 @@ void main() {
     gl_FragColor = vec4(color,1.0);
 }
 ```
-<iframe width="50%" height="200" src="https://player.thebookofshaders.com/?log=180714144030" scrolling="no" seamless></iframe>
+<iframe width="50%" height="200" class="demo" src="https://player.thebookofshaders.com/?log=180714144030" scrolling="no" seamless></iframe>
 虽然画的有点鬼畜，但是道理还是这个道理，主要是学会怎么让自己想要的颜色呆在自己期望的位置上。
 
 ![William Turner - The Fighting Temeraire (1838)](https://thebookofshaders.com/06/turner.jpg)
@@ -90,7 +90,7 @@ void main() {
 
 注意这里```smoothstep(1.024,pct.b, st.y)```，第一个参数要去比1稍大一点的，不然波峰的地方会有个缝。我理解是因为smoothstep起始值和终止值太接近了就会返回0。
 
-<iframe width="50%" height="200" src="http://player.thebookofshaders.com/?log=180716025957" scrolling="no" seamless></iframe>
+<iframe width="50%" height="200" class="demo" src="http://player.thebookofshaders.com/?log=180716025957" scrolling="no" seamless></iframe>
 
 ## homework 6.3
 
@@ -124,7 +124,7 @@ void main() {
     gl_FragColor = vec4(color,1.0);
 }
 ```
-<iframe width="50%" height="200" src="http://player.thebookofshaders.com/?log=180716033409" scrolling="no" seamless></iframe>
+<iframe width="50%" height="200" class="demo" src="http://player.thebookofshaders.com/?log=180716033409" scrolling="no" seamless></iframe>
 
 硬叠了个彩虹出来。。。
 
@@ -187,4 +187,4 @@ void main(){
 这两个放在一起做了，注意前一题中变成色盘时，如果不加```smoothstep```，轮廓会很生硬。
 下面是我改的效果。
 
-<iframe width="200" height="200" src="http://player.thebookofshaders.com/?log=180717043636" scrolling="no" seamless></iframe>
+<iframe width="300" height="300" class="demo" src="http://player.thebookofshaders.com/?log=180717043636" scrolling="no" seamless></iframe>
