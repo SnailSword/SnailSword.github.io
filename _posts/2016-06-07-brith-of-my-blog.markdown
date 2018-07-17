@@ -19,7 +19,7 @@ tags:
 
 终于弄好了这样一个地方了，好想叫他技术博客呀。
 
-用的是[黄玄](https://github.com/huxpro)大大的模板，页面底部留有这个项目的github地址，谢谢每一个愿意无私分享，使这个世界变得越来越好越来越有爱的人们。他的另一个项目[演说](yanshuo.io)也很厉害，是一个云PPT，个人认为非常实用，感兴趣的话可以关注一下。
+用的是[黄玄](https://github.com/huxpro)大大的模板，这个模板项目的github地址是[https://github.com/Huxpro/huxblog-boilerplate](https://github.com/Huxpro/huxblog-boilerplate)，谢谢每一个愿意无私分享，使这个世界变得越来越好越来越有爱的人们。他的另一个项目[演说](yanshuo.io)也很厉害，是一个云PPT，个人认为非常实用，感兴趣的话可以关注一下。
 
 
 <p id = "build"></p>
@@ -58,7 +58,7 @@ dk.rb install    #安装
 * 来到第一个坑，gem在墙外面，而且是翻了墙也连不上的那种，国内镜像有[淘宝镜像](https://ruby.taobao.org/)和[Ruby China镜像](https://gems.ruby-china.org),但是昨天弄的时候两个都不好用，经过各种尝试，基本上网上能查到的报错情况都经历了，最终成功的方法是：用[Ruby China镜像](https://gems.ruby-china.org),网站下面有提示，如果遇到 SSL 证书问题，你又无法解决，请直接用 http://gems.ruby-china.org 避免 SSL 的问题。但改了之后还是报错，最后我把家里的wifi断开，连上手机发的热点………………居然成功了…………
 
 
-* 成功的标志是 
+* 成功的标志是
 
 ```
 gem sources -l
