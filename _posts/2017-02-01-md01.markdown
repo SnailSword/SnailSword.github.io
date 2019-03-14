@@ -4,7 +4,7 @@ title:      "数据挖掘导论读书笔记01"
 subtitle:   "第一章 & 第二章"
 date:       2017-02-01 23:14:00
 author:     "Saniac"
-header-img: "img/post-bg-js-module.jpg"
+header-img: "/img/post-bg-js-module.jpg"
 catalog: true
 tags:
     - 数据挖掘

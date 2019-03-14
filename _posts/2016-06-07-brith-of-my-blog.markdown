@@ -4,7 +4,7 @@ title:      "Birth Of My Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2016-06-07 14:14:00
 author:     "Saniac"
-header-img: "img/post-bg-2015.jpg"
+header-img: "/img/post-bg-2015.jpg"
 catalog: true
 tags:
     - jekyll

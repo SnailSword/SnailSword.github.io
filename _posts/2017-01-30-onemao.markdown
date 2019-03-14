@@ -4,7 +4,7 @@ title:      "写给毛衣毛"
 subtitle:   "旧钥匙，墙"
 date:       2017-01-28 21:14:00
 author:     "Saniac"
-header-img: "img/post-bg-maoyi.jpg"
+header-img: "/img/post-bg-maoyi.jpg"
 catalog: true
 tags:
     - 毛衣毛

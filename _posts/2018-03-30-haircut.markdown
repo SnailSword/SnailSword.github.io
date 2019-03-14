@@ -4,7 +4,7 @@ title:      "削发明志"
 subtitle:   "再见了 这一缕烦恼丝"
 date:       2018-03-30 19:52:00
 author:     "Saniac"
-header-img: "img/post-bg-js-module.jpg"
+header-img: "/img/post-bg-js-module.jpg"
 catalog: true
 tags:
     - 朕的大清啊

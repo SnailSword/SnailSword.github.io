@@ -4,7 +4,7 @@ title:      "在Leetcode上刷题的时候学到的东西"
 subtitle:   "扶朕起来，朕还能写一个通宵。"
 date:       2016-07-28 23:11:00
 author:     "Saniac"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "/img/post-bg-js-version.jpg"
 catalog: true
 tags:
     - 笔试 

@@ -4,7 +4,7 @@ title:      "乘风破浪"
 subtitle:   "会有时，直挂云帆济沧海。"
 date:       2017-01-28 21:14:00
 author:     "Saniac"
-header-img: "img/post-bg-duckweed.jpg"
+header-img: "/img/post-bg-duckweed.jpg"
 catalog: true
 tags:
     - 乘风破浪

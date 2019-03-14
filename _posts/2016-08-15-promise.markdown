@@ -4,7 +4,7 @@ title:      "Promise 临阵磨枪"
 subtitle:   "I promise."
 date:       2016-08-15 23:47:00
 author:     "Saniac"
-header-img: "img/post-bg-promise.jpg"
+header-img: "/img/post-bg-promise.jpg"
 catalog: true
 tags:
     - ES6

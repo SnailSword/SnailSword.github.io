@@ -4,7 +4,7 @@ title:      "一个厉害的判断IE版本方法"
 subtitle:   "……"
 date:       2016-08-31 23:52:00
 author:     "Saniac"
-header-img: "img/post-bg-promise.jpg"
+header-img: "/img/post-bg-promise.jpg"
 catalog: true
 tags:
     - IE

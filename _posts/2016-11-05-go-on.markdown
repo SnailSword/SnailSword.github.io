@@ -4,7 +4,7 @@ title:      "每天进步一点点－02"
 subtitle:   "踏踏实实做事。"
 date:       2016-11-05 16:14:00
 author:     "Saniac"
-header-img: "img/post-bg-2015.jpg"
+header-img: "/img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 计划

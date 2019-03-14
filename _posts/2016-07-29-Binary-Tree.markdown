@@ -4,7 +4,7 @@ title:      "Leetcode二叉树相关题目-JS"
 subtitle:   "二叉树上二叉果，二叉树下你和我。"
 date:       2016-07-29 17:11:00
 author:     "Saniac"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "/img/post-bg-js-version.jpg"
 catalog: true
 tags:
     - 笔试 

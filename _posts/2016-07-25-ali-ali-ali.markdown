@@ -4,7 +4,7 @@ title:      "一些前端笔试题及仅供参考的个人解析"
 subtitle:   "连跑带颠吧，骚年！"
 date:       2016-07-25 16:17:00
 author:     "Saniac"
-header-img: "img/post-bg-2015.jpg"
+header-img: "/img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 笔试 

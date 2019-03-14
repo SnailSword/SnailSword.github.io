@@ -4,7 +4,7 @@ title:      "两道leetcode"
 subtitle:   "不要再拖延啦"
 date:       2017-12-21 15:54:00
 author:     "Saniac"
-header-img: "img/post-bg-js-version.jpg"
+header-img: "/img/post-bg-js-version.jpg"
 catalog: true
 tags:
     - leetcode

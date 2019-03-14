@@ -4,7 +4,7 @@ title:      "圆角的环形图控件"
 subtitle:   "Q:为什么要做圆角的环形图 A:问UE去"
 date:       2018-08-21 22:19:00
 author:     "Saniac"
-header-img: "img/post-bg-js-module.jpg"
+header-img: "/img/post-bg-js-module.jpg"
 catalog: true
 ---
 
